@@ -1,0 +1,168 @@
+anada@uw1-320-13:~/Poly_Final_2$ valgrind --leak-check=full -v ./a.out 
+==6072== Memcheck, a memory error detector
+==6072== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==6072== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==6072== Command: ./a.out
+==6072== 
+--6072-- Valgrind options:
+--6072--    --leak-check=full
+--6072--    -v
+--6072-- Contents of /proc/version:
+--6072--   Linux version 4.4.0-141-generic (buildd@lcy01-amd64-006) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ) #167-Ubuntu SMP Wed Dec 5 10:40:15 UTC 2018
+--6072-- 
+--6072-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-avx
+--6072-- Page sizes: currently 4096, max supported 4096
+--6072-- Valgrind library directory: /usr/lib/valgrind
+--6072-- Reading syms from /home/NETID/anada/Poly_Final_2/a.out
+--6072-- Reading syms from /lib/x86_64-linux-gnu/ld-2.23.so
+--6072--   Considering /lib/x86_64-linux-gnu/ld-2.23.so ..
+--6072--   .. CRC mismatch (computed aa979a42 wanted 9019bbb7)
+--6072--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.23.so ..
+--6072--   .. CRC is valid
+--6072-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--6072--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--6072--   .. CRC mismatch (computed eea41ea9 wanted 2009db78)
+--6072--    object doesn't have a symbol table
+--6072--    object doesn't have a dynamic symbol table
+--6072-- Scheduler: using generic scheduler lock implementation.
+--6072-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==6072== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6072-by-anada-on-???
+==6072== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6072-by-anada-on-???
+==6072== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6072-by-anada-on-???
+==6072== 
+==6072== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6072== don't want to do, unless you know exactly what you're doing,
+==6072== or are doing some strange experiment):
+==6072==   /usr/lib/valgrind/../../bin/vgdb --pid=6072 ...command...
+==6072== 
+==6072== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6072==   /path/to/gdb ./a.out
+==6072== and then give GDB the following command
+==6072==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=6072
+==6072== --pid is optional if only one valgrind process is running
+==6072== 
+--6072-- REDIR: 0x401cfd0 (ld-linux-x86-64.so.2:strlen) redirected to 0x3809e181 (???)
+--6072-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--6072--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--6072--   .. CRC mismatch (computed 2567ccf6 wanted 49420590)
+--6072--    object doesn't have a symbol table
+--6072-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--6072--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--6072--   .. CRC mismatch (computed 0e27c9a8 wanted ac585421)
+--6072--    object doesn't have a symbol table
+==6072== WARNING: new redirection conflicts with existing -- ignoring it
+--6072--     old: 0x0401cfd0 (strlen              ) R-> (0000.0) 0x3809e181 ???
+--6072--     new: 0x0401cfd0 (strlen              ) R-> (2007.0) 0x04c31020 strlen
+--6072-- REDIR: 0x401b920 (ld-linux-x86-64.so.2:index) redirected to 0x4c30bc0 (index)
+--6072-- REDIR: 0x401bb40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c320d0 (strcmp)
+--6072-- REDIR: 0x401dd30 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c35270 (mempcpy)
+--6072-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+--6072--   Considering /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21 ..
+--6072--   .. CRC mismatch (computed b2e7dc97 wanted c9833bdf)
+--6072--    object doesn't have a symbol table
+--6072-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--6072--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..
+--6072--   .. CRC mismatch (computed b9a68419 wanted 29d51b00)
+--6072--    object doesn't have a symbol table
+--6072-- Reading syms from /lib/x86_64-linux-gnu/libc-2.23.so
+--6072--   Considering /lib/x86_64-linux-gnu/libc-2.23.so ..
+--6072--   .. CRC mismatch (computed 7a8ee3e4 wanted a5190ac4)
+--6072--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.23.so ..
+--6072--   .. CRC is valid
+--6072-- Reading syms from /lib/x86_64-linux-gnu/libm-2.23.so
+--6072--   Considering /lib/x86_64-linux-gnu/libm-2.23.so ..
+--6072--   .. CRC mismatch (computed e8c3647b wanted c3efddac)
+--6072--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.23.so ..
+--6072--   .. CRC is valid
+--6072-- REDIR: 0x5461a00 (libc.so.6:strcasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x545d280 (libc.so.6:strcspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x5463cf0 (libc.so.6:strncasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x545f6f0 (libc.so.6:strpbrk) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x545fa80 (libc.so.6:strspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x546114b (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x545f400 (libc.so.6:rindex) redirected to 0x4c308a0 (rindex)
+--6072-- REDIR: 0x5456130 (libc.so.6:malloc) redirected to 0x4c2db20 (malloc)
+--6072-- REDIR: 0x545d720 (libc.so.6:strlen) redirected to 0x4c30f60 (strlen)
+--6072-- REDIR: 0x5460bf0 (libc.so.6:__GI_memcmp) redirected to 0x4c33b90 (__GI_memcmp)
+--6072-- REDIR: 0x545bcd0 (libc.so.6:strcmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x5471570 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c31f90 (strcmp)
+--6072-- REDIR: 0x4ec7f10 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x4c2e7a0 (operator new[](unsigned long))
+--6072-- REDIR: 0x5460bb0 (libc.so.6:bcmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--6072-- REDIR: 0x5540430 (libc.so.6:__memcmp_sse4_1) redirected to 0x4c33cd0 (__memcmp_sse4_1)
+--6072-- REDIR: 0x54613b0 (libc.so.6:__GI_mempcpy) redirected to 0x4c34fa0 (__GI_mempcpy)
+coeff of power 4 of A is: 6
+Printing B of constructor of 0 exponent
+ +2
+--6072-- REDIR: 0x4ec5f40 (libstdc++.so.6:operator delete[](void*)) redirected to 0x4c2f6e0 (operator delete[](void*))
+Testing A and D(copy of A) equality
+Polynomials are equal
+testing get coefficient method
+this Exponent does not exist in the polynomial
+coeff of power 1 of A is: 0
+this Exponent does not exist in the polynomial, out of range
+coeff of power 19 of A is: 0
+this Exponent does not exist in the polynomial, out of range
+coeff of power -2 of A is: 0
+coeff of power 2 of A is: 5
+ +6x^8 +6x^4 +7x^3 +5x^2
+ +8x^4 +8x^3 +2
+ 0
+ +6x^4 +7x^3 +5x^2
+Testing A and D(copy of A) equality after changing A
+Polynomials are NOT equal
+A+B
+ +6x^8 +14x^4 +15x^3 +5x^2 +2
+B+A
+ +6x^8 +14x^4 +15x^3 +5x^2 +2
+A again
+ +6x^8 +6x^4 +7x^3 +5x^2
+B again
+ +8x^4 +8x^3 +2
+B-A
+ -6x^8 +2x^4 +1x^3 -5x^2 +2
+A-B
+ +6x^8 -2x^4 -1x^3 +5x^2 -2
+B*A
+ +48x^12 +48x^11 +60x^8 +104x^7 +96x^6 +40x^5 +12x^4 +14x^3 +10x^2
+A*B
+ +48x^12 +48x^11 +60x^8 +104x^7 +96x^6 +40x^5 +12x^4 +14x^3 +10x^2
+
+Polynomials are NOT equal
+A again
+ +8x^4 +8x^3 +2
+B again
+ +8x^4 +8x^3 +2
+Polynomials are equal
+testing != operator
+Polynomials are equal
+A again
+ +9x^5 +8x^4 +8x^3 +2
+testing != operator after changing A
+Polynomials are NOT equal
+Printing L
+ +5x^9 +1x^4
+Printing M
+ +5x^9 +1x^4
+testing == operator for same equal polynomials but one of them is different size
+Polynomials are equal
+--6072-- REDIR: 0x54564f0 (libc.so.6:free) redirected to 0x4c2ed80 (free)
+==6072== 
+==6072== HEAP SUMMARY:
+==6072==     in use at exit: 72,704 bytes in 1 blocks
+==6072==   total heap usage: 32 allocs, 31 frees, 74,596 bytes allocated
+==6072== 
+==6072== Searching for pointers to 1 not-freed blocks
+==6072== Checked 106,008 bytes
+==6072== 
+==6072== LEAK SUMMARY:
+==6072==    definitely lost: 0 bytes in 0 blocks
+==6072==    indirectly lost: 0 bytes in 0 blocks
+==6072==      possibly lost: 0 bytes in 0 blocks
+==6072==    still reachable: 72,704 bytes in 1 blocks
+==6072==         suppressed: 0 bytes in 0 blocks
+==6072== Reachable blocks (those to which a pointer was found) are not shown.
+==6072== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==6072== 
+==6072== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==6072== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+anada@uw1-320-13:~/Poly_Final_2$ 
